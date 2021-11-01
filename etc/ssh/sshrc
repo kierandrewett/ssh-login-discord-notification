@@ -1,0 +1,5 @@
+ip=`echo $SSH_CONNECTION | cut -d " " -f 1`
+
+git clone https://github.com/EnderDev/ssh-login-discord-notification /tmp/sshlogin >/dev/null 2>&1
+python3 /tmp/sshlogin/notify-ssh-logon.py (YOUR DISCORD WEBHOOK URL HERE) $ip
+rm -rf /tmp/sshlogin >/dev/null 2>&1
