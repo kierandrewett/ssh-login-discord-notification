@@ -22,6 +22,8 @@ country_data = requests.get(country_data_url).json()
 country = ""
 country_code = ""
 
+print(country_data)
+
 if "country_name" in country_data:
     country = country_data["country_name"]
 else:
