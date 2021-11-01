@@ -14,6 +14,7 @@ split_ip = args[1].split(".")
 ip = f"{split_ip[0]}.{split_ip[1]}.\*\*\*.\*\*\*"
 
 hostname = subprocess.check_output(["hostname"]).decode().splitlines()[0]
+username = subprocess.check_output(["whoami"]).decode().splitlines()[0]
 
 country_data_url = f"https://ipapi.co/{args[1]}/json"
 country_data = requests.get(country_data_url).json()
@@ -34,7 +35,7 @@ else:
     country_code = f"pirate_flag"
 
 payload = {
-    "content": f"<@&{discord_role_id}> :shield: New logon to \`{hostname}\` from :{country_code}: {country} ({ip})"
+    "content": f"<@&{discord_role_id}> :shield: New logon to \`{username}@{hostname}\` in :{country_code}: {country} ({ip})"
 }
 
 x = requests.post(url, json=payload)
