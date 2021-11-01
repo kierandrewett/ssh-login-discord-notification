@@ -16,7 +16,7 @@ ip = f"{split_ip[0]}.{split_ip[1]}.\*\*\*.\*\*\*"
 hostname = subprocess.check_output(["hostname"]).decode().splitlines()[0]
 username = subprocess.check_output(["whoami"]).decode().splitlines()[0]
 
-country_data_url = f"https://ipapi.co/{args[1]}/json"
+country_data_url = f"https://ipwhois.app/json/{args[1]}"
 country_data = requests.get(country_data_url).json()
 
 country = ""
@@ -24,8 +24,8 @@ country_code = ""
 
 print(country_data)
 
-if "country_name" in country_data:
-    country = country_data["country_name"]
+if "country" in country_data:
+    country = country_data["country"]
 else:
     country = f"Unknown"
 
