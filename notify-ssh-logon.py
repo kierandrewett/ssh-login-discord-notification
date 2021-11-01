@@ -34,7 +34,7 @@ else:
     country_code = f"pirate_flag"
 
 payload = {
-    "content": f"<@&{discord_role_id}> :shield: New logon to \`{username}@{hostname}\` in :{country_code}: {country} ({ip})"
+    "content": f"<@&{discord_role_id}> :shield: New logon to `{username}@{hostname}` in :{country_code}: {country} ({ip})"
 }
 
 x = requests.post(url, json=payload)
