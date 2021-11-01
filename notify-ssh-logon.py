@@ -26,7 +26,6 @@ if "country_name" in country_data:
     country = country_data["country_name"]
 else:
     country = f"Unknown"
-    ip = args[1]
 
 if "country_code" in country_data:
     code = country_data["country_code"]
